@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{T.Bayes}
+\author{Atalia Navarro Boullosa }
+\date{June 2018}
+
+\begin{document}
+
+\maketitle
+Derive Bayes Theorem from $p(x,y) = p(y,x)$ \\
+\ \\
+Using the probability porperty: $p(x,y) = P(x\mid y)P(y)$ we can write\\
+\begin{equation}
+   p(x,y) = P(x\mid y)P(y) = P(y\mid x)P(x) = p(y,x)
+\end{equation}
+
+\begin{equation}
+    P(y\mid x)P(x) = P(x\mid y)P(y)
+\end{equation}
+Dividing by $P(x)$ in both sides we get
+
+\begin{equation}
+    \frac{P(y\mid x)P(x)}{P(x)} = \frac{P(x\mid y)P(y)}{P(x)}
+\end{equation}
+Finally
+\begin{equation}
+    P(y\mid x) = \frac{P(x\mid y)P(y)}{P(x)}
+\end{equation}
+wich is the Bayes Theorem.
+\end{document}
