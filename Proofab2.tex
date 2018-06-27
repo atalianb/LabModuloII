@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Obtaining a and b}
+\author{Atalia Navarro Boullosa }
+\date{June 2018}
+
+\begin{document}
+Show explicitly that the linear least square method is derived from the minimization of the chisquare when the model is a straight line.
+\ \\
+Beginning with 
+\begin{equation}
+ \chi^{2}=\sum \frac{(y_{i}-y(x_{i},\theta))^{2}}{\sigma_{y_{i}}^{2}}
+\end{equation}
+where $\sigma_{y_{i}}^{2}= \sum(y_{i}-\bar{y})^{2}$. \\
+If we have $y(x_{i},\theta)=a*x_{i}+b$ and derivate respect to $a$ for minimize 
+\begin{equation}
+ \frac{\partial \chi^{2}}{\partial a}=\frac{\sum(y_{i}-ax_{i}-b)(-x_{i})}{\sigma_{y_{i}}^{2}}=0
+\end{equation}
+simplifying $b$ we get
+\begin{equation}
+b= \frac{\sum x_{i}y_{i}-a\sum x_{i}^{2}}{\sum x_{i}} .
+\label{eq:b}
+\end{equation}
+Derivating respect to $b$ for minimize
+\begin{equation}
+\frac{\partial \chi^{2}}{\partial a}=\frac{\sum(y_{i}-ax_{i}-b)(-1)}{\sigma_{y_{i}}^{2}}=0
+\end{equation}
+where $\sum y_{i}-a\sum x_{i} -nb=0$, substituting \ref{eq:b} we get 
+\begin{equation}
+\sum y_{i}-a\sum x_{i}-n\frac{\sum x_{i}y_{i}-a\sum x_{i}^{2}}{\sum x_{i}}=0 .
+\end{equation}
+By the other hand we know that 
+\begin{equation}
+\bar{y}=\sum \frac{y_{i}}{n} ;
+\bar{x}=\sum \frac{x_{i}}{n}
+\end{equation}
+So
+\begin{equation}
+\frac{a}{\bar{x}}(\sum x_{i}^{2}-\bar{x}\sum x_{i})=\frac{\sum x_{i}y_{i}}{\bar{x}}-\sum y_{i}
+\end{equation}
+and finally
+\begin{equation}
+a=\frac{\sum x_{i}y_{i}-n\bar{x}\bar{y}}{\sum x_{i}^{2}-n\bar{x}^{2}}.
+\end{equation}
+Substituting the last equation for a in \ref{eq:b}
+\begin{equation}
+b=\frac{\sum x_{i}y_{i}}{\sum x_{i}}-\frac{\sum x_{i}y_{i}-n\bar{x}\bar{y}}{\sum x_{i}^{2}-n\bar{x}^{2}}\frac{\sum x_{i}^{2}}{\sum x_{i}}
+\end{equation}
+or 
+\begin{equation}
+b=\frac{1}{n\bar{x}(\sum x_{i}^{2}-n\bar{x}^{2})}(\sum x_{i}y_{i}(\sum x_{i}^{2}-n\bar{x}^{2})-(\sum x_{i}y_{i}-n\bar{x}\bar{y})\sum x_{i}^{2})
+\end{equation}
+and simplifying 
+\begin{equation}
+b=\frac{\bar{y}\sum x_{i}^{2}-\bar{x}\sum x_{i}y_{i}}{\sum x_{i}^{2}-n\bar{x}^{2}}
+\end{equation}
+which give us the result we expected. 
+\end{document}
